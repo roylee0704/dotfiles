@@ -69,3 +69,82 @@ alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"
 alias grip="grip --browser --pass=$GITHUB_TOKEN"
 alias fkill="ps -e | fzf | awk '{print $1}' | xargs kill"
 alias formatmd="remark --use remark-preset-webpro"
+
+# Git Aliases
+
+alias g='git'
+alias ga='git add'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbd='git branch -d'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gcam='git commit -v -a -m'
+alias gcb='git checkout -b'
+alias gco='git checkout'
+alias gd='git diff'
+alias gf='git fetch'
+alias gpo='git push origin'
+alias gst='git status'
+alias gstaa='git stash apply'
+alias gstp='git stash pop'
+
+# Kubernetes
+
+alias k='kubectl'
+alias kd='kubectl describe'
+alias kg='kubectl get'
+alias kga='kubectl get po,svc,deploy'
+
+
+# Work
+
+switch-aws-profile() {
+  export AWS_ACCESS_KEY_ID=$1
+  export AWS_SECRET_ACCESS_KEY=$2
+  export AWS_DEFAULT_REGION=$3
+}
+alias aws-profile-daikinprod='switch-aws-profile ENTER_SECRET_KEY ENTER_REGION'
+alias aws-profile-daikin='switch-aws-profile ENTER_SECRET_KEY ENTER_REGION'
+alias aws-profile-gobike='switch-aws-profile ENTER_SECRET_KEY ENTER_REGION'
+
+alias work='cd ~/dev/work;'
+alias draw='cd ~/dev/work/roylee0704/drawing-boards'
+alias roy='work; cd roylee0704'
+alias daikin='work; cd daikin; aws-profile-daikin'
+alias daikin-api='work; daikin; cd api-core; aws-profile-daikin'
+alias daikin-ops='work; daikin; cd web-ops; aws-profile-daikin'
+alias cd-api='gobike; cd gobike-api; aws-profile-gobike'
+alias hrla='work; cd hrla;'
+alias lava='work; cd lava-x;'
+alias yippi='work; cd yippi;'
+alias med='work; cd medcury;'
+alias cto='work; cd getcto;'
+alias getcto='work; cd getcto;'
+alias prop='work; cd propolyco;'
+alias propoly='work; cd propolyco;'
+alias propolyco='work; cd propolyco;'\
+alias nusacap='work; cd nusacap;'
+alias presto='work; cd color;'
+alias color='work; cd color;'
+alias trion='work; cd trion;'
+alias thai-api='work; cd trion/thaiadvocates-api;'
+alias thai-admin='work; cd trion/thaiadvovates-admin;'
+alias san='work; cd sansantech;'
+alias ol='cd ~/dev/work/openlearning'
+alias ol-web='cd ~/dev/work/openlearning/ol-docker/engine/OpenLearningClient'
+alias ol-api='cd ~/dev/work/openlearning/ol-docker/engine/OpenLearningEngine'
+alias ol-async='cd ~/dev/work/openlearning/ol-async-engine'
+alias ol-app='ol; cd instructional-designer-app;'
+alias idapp='ol; cd instructional-designer-app;'
+alias idai='roy; cd instructional-designer.ai;'
+alias feets='work; cd feets;'
+alias feets-api='work; cd feets/api;'
+alias bingotown='work; cd bingotown;'
+alias onesoft='work; cd onesoft;'
+alias pickle='bingotown; cd pickle-web;'
+alias fordee='work; cd bingotown/c12_4d/c12_4d/fordee;'
+alias finstar='work; cd bingotown/c18;'
+alias c18='work; cd bingotown/c18;'
+alias onecredit='work; cd onecredit;'
+alias llm='work; cd onecredit/data-engine;'
