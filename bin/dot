@@ -15,6 +15,7 @@ sub_help () {
   echo "   help             This help message"
   echo "   macos            Apply macOS system defaults"
   echo "   test             Run tests"
+  echo "   sync             Pull latest dotfiles and run make"
   echo "   update           Update packages and pkg managers (brew, casks, cargo, pip3, npm, gems, macOS)"
 }
 
@@ -40,6 +41,14 @@ sub_edit () {
 
 sub_test () {
   bats "$DOTFILES_DIR"/test/*.bats
+}
+
+sub_sync () {
+  cd "$DOTFILES_DIR"
+  echo "Pulling latest dotfiles..."
+  git pull --rebase
+  echo "Running make..."
+  make
 }
 
 sub_update () {
