@@ -22,6 +22,10 @@ alias zip="zip -x *.DS_Store -x *__MACOSX* -x *.AppleDouble*"
 
 alias afk="open /System/Library/CoreServices/ScreenSaverEngine.app"
 
+# Prevent sleep
+
+alias nosleep="caffeinate -dims"
+
 # Log off
 
 alias logoff="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
