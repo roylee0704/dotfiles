@@ -22,7 +22,7 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 
 [ -f "$DOTFILES_DIR/system/.exports" ] && . "$DOTFILES_DIR/system/.exports"
 
-for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,n,path,alias,fzf,grep,fix,pnpm,zoxide}; do
+for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,n,path,alias,grep,fix,pnpm,zoxide}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
@@ -81,6 +81,16 @@ add-zsh-hook precmd _zsh_prompt
 # zsh completion
 
 autoload -Uz compinit && compinit
+
+# fzf (zsh integration)
+
+if is-executable fzf; then
+  eval "$(fzf --zsh)"
+  export FZF_CTRL_R_OPTS="
+    --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+    --color header:italic
+    --header 'Press CTRL-Y to copy command into clipboard'"
+fi
 
 # Set LSCOLORS
 
