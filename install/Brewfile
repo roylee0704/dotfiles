@@ -52,3 +52,6 @@ brew "webp"
 
 # misc
 brew "grip"
+
+# casks
+cask "tailscale"
