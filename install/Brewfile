@@ -35,6 +35,7 @@ brew "ripgrep"
 brew "the_silver_searcher"
 
 # languages/tools
+brew "claude-code"
 brew "cmake"
 brew "gh"
 brew "n"
