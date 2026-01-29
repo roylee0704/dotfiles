@@ -54,4 +54,5 @@ brew "webp"
 brew "grip"
 
 # casks
+cask "claude"
 cask "tailscale"
